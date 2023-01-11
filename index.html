@@ -35,24 +35,28 @@
         }
         //turns function choice into variable
         let computerChoice = getComputerChoice();
-        console.log(computerChoice);
-
-        // shows what comp chose
-        console.log(getComputerChoice());
+        // shows computer choice
+        console.log("computer picks: " + computerChoice);
        
         // prompts and collects user input
         let userSelection = prompt("Select, Rock, Paper or Scissors").toLowerCase();
-        console.log(userSelection);
-        let together = userSelection+ " " + computerChoice;
+        console.log("u picked: " + userSelection);
+
+        //single variable comparison string, easier to read
+        let together = computerChoice+ " " + userSelection;
         console.log(together);
+
 
         function gameSelection() {
         if (userSelection == computerChoice){
             return tie;
-        } else if (
-            together == "rock scissors" || " paper scissors" || "scissors paper") {
+        } else if (together == "rock paper" 
+            || together == "paper scissors" 
+            || together == "scissors rock") {
             return win;
-        } else if (together == "rock paper" || "paper rock" || "scissors rock") {
+        } else if (together == "rock scissors" 
+            || together == "paper rock" 
+            || together == "scissors paper") {
             return loose;
         } else {
             return invalid;
