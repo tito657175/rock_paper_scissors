@@ -9,14 +9,18 @@
 </head>
 <body>
     <script>
-        console.log(test_word);
+        // creates random number
         let randomNumber = Math.random();
-        console.log(randomNumber); // shows what random number is
 
+        // shows what random number is
+        console.log(randomNumber);
+        
+        // strings for short hand writing later
         let win = "congrats u win";
         let loose = "sorry, you loose";
         let tie = "tie, try again";
 
+        //function that gets computer choice
         function getComputerChoice(computerChoice) {
             if (randomNumber <= .3){
                 computerChoice = "Rock";
@@ -28,8 +32,11 @@
                 return computerChoice;
             }
         }
-        console.log(getComputerChoice()); // shows what comp chose
-        
+
+        // shows what comp chose
+        console.log(getComputerChoice());
+       
+        // prompts and collects user input
         let userSelection = prompt("Select, Rock, Paper or Scissors");
         console.log(userSelection);
 
