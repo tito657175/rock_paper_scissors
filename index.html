@@ -8,6 +8,9 @@
     <script src = "javascript.js"></script>
 </head>
 <body>
+    <h1>Tito's Rock Paper Scissors Game</h1>
+    <p id = "display_results"></p>
+
     <script>
         // creates random number
         let randomNumber = Math.random();
@@ -16,10 +19,10 @@
         console.log(randomNumber);
 
         // strings for short hand writing later
-        let win = "congrats u win";
-        let loose = "sorry, you loose";
-        let tie = "tie, try again";
-        let invalid = "Invalid entry ya fu, try rock, paper or scissors";
+        let win = "Congrats u win.";
+        let loose = "Sorry, you loose.";
+        let tie = "Tie, try again.";
+        let invalid = "Invalid entry ya fu, try rock, paper or scissors.";
 
         //function that gets computer choice
         function getComputerChoice(computerChoice) {
@@ -64,7 +67,12 @@
     }
      // check results of game
      let gameResults = gameSelection();
+     console.log("The computer picked " + computerChoice + " and you picked " + userSelection);
      console.log(gameResults);
+
+     let results = "The computer picked " + computerChoice + " and you picked " + userSelection + ". " + gameResults;
+     document.getElementById("display_results").innerHTML = results;
+     
 
     </script>
 </body>
