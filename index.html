@@ -52,6 +52,8 @@
         } else if (
             together == "rock scissors" || " paper scissors" || "scissors paper") {
             return win;
+        } else if (together == "rock paper" || "paper rock" || "scissors rock") {
+            return loose;
         } else {
             return invalid;
         }
