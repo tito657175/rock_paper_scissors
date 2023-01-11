@@ -19,6 +19,7 @@
         let win = "congrats u win";
         let loose = "sorry, you loose";
         let tie = "tie, try again";
+        let invalid = "Invalid entry ya fu, try rock, paper or scissors";
 
         //function that gets computer choice
         function getComputerChoice(computerChoice) {
@@ -32,6 +33,9 @@
                 return computerChoice;
             }
         }
+        //turns function choice into variable
+        let computerChoice = getComputerChoice();
+        console.log(computerChoice);
 
         // shows what comp chose
         console.log(getComputerChoice());
@@ -39,12 +43,23 @@
         // prompts and collects user input
         let userSelection = prompt("Select, Rock, Paper or Scissors").toLowerCase();
         console.log(userSelection);
+        let together = userSelection+ " " + computerChoice;
+        console.log(together);
 
+        function gameSelection() {
+        if (userSelection == computerChoice){
+            return tie;
+        } else if (
+            together == "rock scissors" || " paper scissors" || "scissors paper") {
+            return win;
+        } else {
+            return invalid;
+        }
+    }
+     // check results of game
+     let gameResults = gameSelection();
+     console.log(gameResults);
 
-         //function gameSelection(); {
-         //   if ( )
-        //}
-        
     </script>
 </body>
 </html>
