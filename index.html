@@ -10,14 +10,22 @@
 <body>
     <script>
         console.log(test_word);
-        let computerChoice = Math.random();
-        console.log(computerChoice);
+        let randomNumber = Math.random();
+        console.log(randomNumber);
 
-        function getComputerChoice() {
-            //if 
-            return;
-        };
-
+        function getComputerChoice(computerChoice) {
+            if (randomNumber <= .3){
+                computerChoice = "Rock";
+                return computerChoice;
+            } else if ( randomNumber >.3 && randomNumber <.6) {
+                computerChoice = "Paper";
+                return computerChoice;
+            } else {computerChoice = "Scissors";
+                return computerChoice;
+            }
+        }
+        console.log(getComputerChoice());
+        
 
     </script>
 </body>
