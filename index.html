@@ -11,7 +11,11 @@
     <script>
         console.log(test_word);
         let randomNumber = Math.random();
-        console.log(randomNumber);
+        console.log(randomNumber); // shows what random number is
+
+        let win = "congrats u win";
+        let loose = "sorry, you loose";
+        let tie = "tie, try again";
 
         function getComputerChoice(computerChoice) {
             if (randomNumber <= .3){
@@ -24,9 +28,15 @@
                 return computerChoice;
             }
         }
-        console.log(getComputerChoice());
+        console.log(getComputerChoice()); // shows what comp chose
         
+        let userSelection = prompt("Select, Rock, Paper or Scissors");
+        console.log(userSelection);
 
+        /* function gameSelection(); {
+            if 
+        }
+        */ 
     </script>
 </body>
 </html>
