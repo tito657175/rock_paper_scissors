@@ -12,11 +12,6 @@
     <p id = "display_results"></p>
 
     <script>
-        // creates random number
-        let randomNumber = Math.random();
-
-        // shows what random number is
-        console.log(randomNumber);
 
         // strings for short hand writing later
         let win = "Congrats u win this round.";
@@ -24,28 +19,32 @@
         let tie = "Tie, try again.";
         let invalid = "Invalid entry ya fu, try rock, paper or scissors. Game is not case sensitive, don't worry.";
         let userQuestion = "Select Rock, Paper or Scissors";
-        // Additional variables
-
-        //function that gets computer choice
-        function getComputerChoice(computerChoice) {
-            if (randomNumber <= .3){
-                computerChoice = "rock";
-                return computerChoice;
-            } else if ( randomNumber >.3 && randomNumber <.6) {
-                computerChoice = "paper";
-                return computerChoice;
-            } else {computerChoice = "scissors";
-                return computerChoice;
-            }
-        }
-        //turns function choice into variable
-        let computerChoice = getComputerChoice();
-        // shows computer choice
-        console.log("computer picks: " + computerChoice);
-        console.log("-----------------------");
 
         // game function that returns counted results
        for (count = 1; count < 6; count++) {
+        // creates random number
+            let randomNumber = Math.random();
+            console.log(randomNumber);
+
+        //function that gets computer choice
+            function getComputerChoice(computerChoice) {
+                if (randomNumber <= .3){
+                    computerChoice = "rock";
+                    return computerChoice;
+                } else if ( randomNumber >.3 && randomNumber <.6) {
+                    computerChoice = "paper";
+                    return computerChoice;
+                } else {computerChoice = "scissors";
+                    return computerChoice;
+                }
+            }
+        //turns function choice into variable
+            let computerChoice = getComputerChoice();
+        // shows computer choice
+            console.log("computer picks: " + computerChoice);
+            console.log("-----------------------");
+
+
             // prompts and collects user input
             let userSelection = prompt(userQuestion).toLowerCase();
             console.log("u picked: " + userSelection);
@@ -85,10 +84,7 @@
             console.log("End Of Round " + count);
             console.log("--------------------------");
         }
-      
 
-        
-     
     </script>
 </body>
 </html>
