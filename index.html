@@ -21,41 +21,37 @@
         let userQuestion = "Select Rock, Paper or Scissors";
 
         // game function that returns counted results
+        
        for (count = 1; count < 6; count++) {
-        // creates random number
+            // creates random number
             let randomNumber = Math.random();
             console.log(randomNumber);
 
-        //function that gets computer choice
+            //function that gets computer choice
             function getComputerChoice(computerChoice) {
-                if (randomNumber <= .3){
+                if (randomNumber <= .33){
                     computerChoice = "rock";
                     return computerChoice;
-                } else if ( randomNumber >.3 && randomNumber <.6) {
+                } else if ( randomNumber >.33 && randomNumber <.63) {
                     computerChoice = "paper";
                     return computerChoice;
                 } else {computerChoice = "scissors";
                     return computerChoice;
                 }
             }
-        //turns function choice into variable
+            //turns function choice into variable
             let computerChoice = getComputerChoice();
-        // shows computer choice
+            // shows computer choice
             console.log("computer picks: " + computerChoice);
-            console.log("-----------------------");
-
 
             // prompts and collects user input
             let userSelection = prompt(userQuestion).toLowerCase();
             console.log("u picked: " + userSelection);
             
-            //single variable comparison string, easier to read
+            //single variable comparison string
             let together = computerChoice + " " + userSelection;
             // console.log("combined string is: " + together);
             
-            // let new_user_input = prompt(userQuestion);
-            // console.log(new_user_input);
-            // console.log(gameSelection());
             function gameSelection() {
             if (userSelection == computerChoice){
                 return tie;
@@ -79,12 +75,13 @@
     
             // display results to html
             let results = "The computer picked " + computerChoice + " and you picked " + userSelection + ". " + gameResults;
-            // document.getElementById("display_results").innerHTML = results;
+            document.getElementById("display_results").innerHTML = results;
 
             console.log("End Of Round " + count);
             console.log("--------------------------");
         }
 
+        
     </script>
 </body>
 </html>
