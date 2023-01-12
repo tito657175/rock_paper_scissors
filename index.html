@@ -80,7 +80,7 @@
             //turns function into string
             let gameResults = gameSelection();
             console.log("The computer picked " + computerChoice + " and you picked " + userSelection);
-            // console.log(gameSelection());
+            console.log(gameResults);
     
             // display results to html
             let results = "The computer picked " + computerChoice + " and you picked " + userSelection + ". " + gameResults;
@@ -102,7 +102,20 @@
         document.write("Total times you tied: " + total_ties + "<br>");
         document.write("Total times you wins: " + total_wins + "<br>");
         document.write("Total times you loses: " + total_looses + "<br>");
-        document.write("Total times you screwed up the text: " + total_invalid + "<br>");
+        document.write("Total times you screwed up the text: " + total_invalid + "<br><br>");
+
+        function final_results() {
+        if (total_wins > total_looses) {
+            return final_result = "You did it, you won the game! <br>You won with " + total_wins + " wins " + " to " + total_looses + " losses.";
+        } else if (total_looses > total_wins) {
+            return final_result = "You lost the game, sorry. <br>You lost with " + total_wins + " wins " + " to " + total_looses + " losses.";
+        } else if (total_wins == total_looses) {
+            return final_result = "You tied, there is no winner this time.<br> You tied with " + total_wins + " wins " + " to " + total_looses + " losses.";
+        }
+    }
+        // console.log(final_results());
+        document.write(final_results());
+
     </script>
 </body>
 </html>
