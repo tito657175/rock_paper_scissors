@@ -49,17 +49,20 @@
         let together = computerChoice + " " + userSelection;
         console.log("combined string is: " + together);
 
-        for (let count = 0; count < 5; count++) {
-            function gameSelection() {
-            } if (userSelection == computerChoice) {
+        for (let count = 0; count < 5; count++){
+            console.log(count);
+            }
+        
+            /* function gameSelection() {
+            if (userSelection == computerChoice){
                 return tie;
             } else if (together == "rock paper" 
                 || together == "paper scissors" 
-                || together == "scissors rock") {
+                || together == "scissors rock"){
                 return win;
             } else if (together == "rock scissors" 
                 || together == "paper rock" 
-                || together == "scissors paper") {
+                || together == "scissors paper"){
                 return loose;
             } else {
                 return invalid;
@@ -67,8 +70,10 @@
             //turns function into string
             let gameResults = gameSelection();
             console.log("The computer picked " + computerChoice + " and you picked " + userSelection);
-            console.log(gameResults); 
-        }
+            console.log(gameResults);
+            } */
+        
+    
 
         //display results to html
         // let results = "The computer picked " + computerChoice + " and you picked " + userSelection + ". " + gameResults;
