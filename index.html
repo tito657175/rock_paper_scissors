@@ -19,8 +19,8 @@
         console.log(randomNumber);
 
         // strings for short hand writing later
-        let win = "Congrats u win.";
-        let loose = "Sorry, you loose.";
+        let win = "Congrats u win this round.";
+        let loose = "Sorry, you loose this round.";
         let tie = "Tie, try again.";
         let invalid = "Invalid entry ya fu, try rock, paper or scissors. Game is not case sensitive, don't worry.";
 
@@ -47,7 +47,7 @@
 
         //single variable comparison string, easier to read
         let together = computerChoice + " " + userSelection;
-        console.log(together);
+        console.log("combined string is: " + together);
 
 
         function gameSelection() {
@@ -69,6 +69,7 @@
      let gameResults = gameSelection();
      console.log("The computer picked " + computerChoice + " and you picked " + userSelection);
      console.log(gameResults);
+     
     // stuff to display results to html
      let results = "The computer picked " + computerChoice + " and you picked " + userSelection + ". " + gameResults;
      document.getElementById("display_results").innerHTML = results;
