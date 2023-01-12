@@ -8,12 +8,14 @@
     <script src = "javascript.js"></script>
 </head>
 <body>
-    <h1>Tito's Rock Paper Scissors Game</h1>
+    <h1>Tito's 3 Rounds of Rock Paper Scissors Game</h1>
     <p id = "display_results"></p>
+    <!--  <label for="user_input">Rock, Paper or Scissors?<br></label> -->
+    <!-- <input type="text" id="user_input" name="user_input"> -->
 
     <script>
 
-        // strings for short hand writing later
+        // strings for shorthand writing later
         let win = "Congrats u win this round.";
         let loose = "Sorry, you loose this round.";
         let tie = "Tie, try again.";
@@ -22,7 +24,7 @@
 
         // game function that returns counted results
         
-       for (count = 1; count < 6; count++) {
+       for (count = 1; count < 4; count++) {
             // creates random number
             let randomNumber = Math.random();
             console.log(randomNumber);
@@ -71,14 +73,21 @@
             //turns function into string
             let gameResults = gameSelection();
             console.log("The computer picked " + computerChoice + " and you picked " + userSelection);
-            console.log(gameResults);
+            console.log(gameSelection());
     
             // display results to html
             let results = "The computer picked " + computerChoice + " and you picked " + userSelection + ". " + gameResults;
-            document.getElementById("display_results").innerHTML = results;
+            // document.getElementById("display_results").innerHTML = results;
 
             console.log("End Of Round " + count);
             console.log("--------------------------");
+
+            //return results to user
+            alert(results);
+
+            //Collect all results of here
+            document.write(results);
+            document.write("<br> End Of Round " + count + ". <br><br>");
         }
 
         
