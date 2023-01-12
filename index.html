@@ -23,6 +23,8 @@
         let loose = "Sorry, you loose this round.";
         let tie = "Tie, try again.";
         let invalid = "Invalid entry ya fu, try rock, paper or scissors. Game is not case sensitive, don't worry.";
+        let userQuestion = "Select Rock, Paper or Scissors";
+        // Additional variables
 
         //function that gets computer choice
         function getComputerChoice(computerChoice) {
@@ -39,21 +41,26 @@
         //turns function choice into variable
         let computerChoice = getComputerChoice();
         // shows computer choice
-        /*console.log("computer picks: " + computerChoice); */
+        console.log("computer picks: " + computerChoice);
        
-        // prompts and collects user input
-        let userSelection = prompt("Select Rock, Paper or Scissors").toLowerCase();
-        console.log("u picked: " + userSelection);
+        // game function that returns counted results
+       for (count = 1; count < 6; count++) {
+            // prompts and collects user input
+            let userSelection = prompt(userQuestion).toLowerCase();
+            console.log("u picked: " + userSelection);
+            
+            //single variable comparison string, easier to read
+            let together = computerChoice + " " + userSelection;
+            console.log("combined string is: " + together);
+            
+            // let new_user_input = prompt(userQuestion);
+            // console.log(new_user_input);
+            // console.log(gameSelection());
+            console.log("End Of Round " + count);
+        }
+      
 
-        //single variable comparison string, easier to read
-        let together = computerChoice + " " + userSelection;
-        console.log("combined string is: " + together);
-
-        for (let count = 0; count < 5; count++){
-            console.log(count);
-            }
-        
-            /* function gameSelection() {
+        function gameSelection() {
             if (userSelection == computerChoice){
                 return tie;
             } else if (together == "rock paper" 
@@ -67,16 +74,15 @@
             } else {
                 return invalid;
             }
-            //turns function into string
-            let gameResults = gameSelection();
-            console.log("The computer picked " + computerChoice + " and you picked " + userSelection);
-            console.log(gameResults);
-            } */
-        
-    
+        }
 
-        //display results to html
-        // let results = "The computer picked " + computerChoice + " and you picked " + userSelection + ". " + gameResults;
+        //turns function into string
+        let gameResults = gameSelection();
+        console.log("The computer picked " + computerChoice + " and you picked " + userSelection);
+        console.log(gameResults);
+  
+        // display results to html
+        let results = "The computer picked " + computerChoice + " and you picked " + userSelection + ". " + gameResults;
         // document.getElementById("display_results").innerHTML = results;
      
     </script>
