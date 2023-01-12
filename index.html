@@ -49,30 +49,30 @@
         let together = computerChoice + " " + userSelection;
         console.log("combined string is: " + together);
 
-
-        function gameSelection() {
-        if (userSelection == computerChoice){
-            return tie;
-        } else if (together == "rock paper" 
-            || together == "paper scissors" 
-            || together == "scissors rock") {
-            return win;
-        } else if (together == "rock scissors" 
-            || together == "paper rock" 
-            || together == "scissors paper") {
-            return loose;
-        } else {
-            return invalid;
+        for (let count = 0; count < 5; count++) {
+            function gameSelection() {
+            } if (userSelection == computerChoice) {
+                return tie;
+            } else if (together == "rock paper" 
+                || together == "paper scissors" 
+                || together == "scissors rock") {
+                return win;
+            } else if (together == "rock scissors" 
+                || together == "paper rock" 
+                || together == "scissors paper") {
+                return loose;
+            } else {
+                return invalid;
+            }
+            //turns function into string
+            let gameResults = gameSelection();
+            console.log("The computer picked " + computerChoice + " and you picked " + userSelection);
+            console.log(gameResults); 
         }
-    }
-     // check results of game
-     let gameResults = gameSelection();
-     console.log("The computer picked " + computerChoice + " and you picked " + userSelection);
-     console.log(gameResults);
-     
-    // stuff to display results to html
-     let results = "The computer picked " + computerChoice + " and you picked " + userSelection + ". " + gameResults;
-     document.getElementById("display_results").innerHTML = results;
+
+        //display results to html
+        // let results = "The computer picked " + computerChoice + " and you picked " + userSelection + ". " + gameResults;
+        // document.getElementById("display_results").innerHTML = results;
      
     </script>
 </body>
