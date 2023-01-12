@@ -16,11 +16,15 @@
     <script>
 
         // strings for shorthand writing later
-        let win = "Congrats u win this round.";
-        let loose = "Sorry, you loose this round.";
+        let win = "Congrats, U won this round!";
+        let loose = "Sorry, you lost this round.";
         let tie = "Tie, try again.";
         let invalid = "Invalid entry ya fu, try rock, paper or scissors. Game is not case sensitive, don't worry.";
         let userQuestion = "Select Rock, Paper or Scissors";
+        let total_ties = 0;
+        let total_wins = 0;
+        let total_looses = 0;
+        let total_invalid = 0;
 
         // game function that returns counted results
        for (count = 1; count < 4; count++) {
@@ -55,16 +59,20 @@
             
             function gameSelection() {
             if (userSelection == computerChoice){
+                total_ties++;
                 return tie;
             } else if (together == "rock paper" 
                 || together == "paper scissors" 
                 || together == "scissors rock"){
+                total_wins++;
                 return win;
             } else if (together == "rock scissors" 
                 || together == "paper rock" 
                 || together == "scissors paper"){
+                total_looses++;
                 return loose;
             } else {
+                total_invalid++;
                 return invalid;
             }
         }
@@ -72,7 +80,7 @@
             //turns function into string
             let gameResults = gameSelection();
             console.log("The computer picked " + computerChoice + " and you picked " + userSelection);
-            console.log(gameSelection());
+            // console.log(gameSelection());
     
             // display results to html
             let results = "The computer picked " + computerChoice + " and you picked " + userSelection + ". " + gameResults;
@@ -88,11 +96,13 @@
             document.write(results);
             document.write("<br> End Of Round " + count + ". <br><br>");
 
-            //count # of wins, looses, ties
-            
         }
 
-        
+        //Final Count
+        document.write("Total times you tied: " + total_ties + "<br>");
+        document.write("Total times you wins: " + total_wins + "<br>");
+        document.write("Total times you loses: " + total_looses + "<br>");
+        document.write("Total times you screwed up the text: " + total_invalid + "<br>");
     </script>
 </body>
 </html>
