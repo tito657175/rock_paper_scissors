@@ -42,7 +42,8 @@
         let computerChoice = getComputerChoice();
         // shows computer choice
         console.log("computer picks: " + computerChoice);
-       
+        console.log("-----------------------");
+
         // game function that returns counted results
        for (count = 1; count < 6; count++) {
             // prompts and collects user input
@@ -51,16 +52,12 @@
             
             //single variable comparison string, easier to read
             let together = computerChoice + " " + userSelection;
-            console.log("combined string is: " + together);
+            // console.log("combined string is: " + together);
             
             // let new_user_input = prompt(userQuestion);
             // console.log(new_user_input);
             // console.log(gameSelection());
-            console.log("End Of Round " + count);
-        }
-      
-
-        function gameSelection() {
+            function gameSelection() {
             if (userSelection == computerChoice){
                 return tie;
             } else if (together == "rock paper" 
@@ -76,14 +73,21 @@
             }
         }
 
-        //turns function into string
-        let gameResults = gameSelection();
-        console.log("The computer picked " + computerChoice + " and you picked " + userSelection);
-        console.log(gameResults);
-  
-        // display results to html
-        let results = "The computer picked " + computerChoice + " and you picked " + userSelection + ". " + gameResults;
-        // document.getElementById("display_results").innerHTML = results;
+            //turns function into string
+            let gameResults = gameSelection();
+            console.log("The computer picked " + computerChoice + " and you picked " + userSelection);
+            console.log(gameResults);
+    
+            // display results to html
+            let results = "The computer picked " + computerChoice + " and you picked " + userSelection + ". " + gameResults;
+            // document.getElementById("display_results").innerHTML = results;
+
+            console.log("End Of Round " + count);
+            console.log("--------------------------");
+        }
+      
+
+        
      
     </script>
 </body>
