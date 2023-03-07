@@ -40,7 +40,7 @@ for (count = 1; count < 4; count++) {
     console.log("computer picks: " + computerChoice);
 
     //collects user input
-    let userSelection = querySelector('button').toLowerCase();
+    let userSelection = document.querySelector('button').toLowerCase();
     console.log("u picked: " + userSelection);
     
     //single variable comparison string
