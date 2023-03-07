@@ -1,5 +1,7 @@
-// Testing the new branch, HELLO!
-
+// Create a container with all console log output
+const container = document.querySelector('#container');
+    console.log('this is the container constant ' + container);
+// const userSelection = 
 
 // strings for shorthand writing later
 let win = "Congrats, U won this round!";
@@ -31,18 +33,18 @@ for (count = 1; count < 4; count++) {
             return computerChoice;
         }
     }
+
     //turns function choice into variable
     let computerChoice = getComputerChoice();
     // shows computer choice
     console.log("computer picks: " + computerChoice);
 
-    // prompts and collects user input
-    let userSelection = prompt(userQuestion).toLowerCase();
+    //collects user input
+    let userSelection = querySelector('button').toLowerCase();
     console.log("u picked: " + userSelection);
     
     //single variable comparison string
     let together = computerChoice + " " + userSelection;
-    // console.log("combined string is: " + together);
     
     function gameSelection() {
     if (userSelection == computerChoice){
@@ -71,17 +73,16 @@ for (count = 1; count < 4; count++) {
 
     // display results to html
     let results = "The computer picked " + computerChoice + " and you picked " + userSelection + ". " + gameResults;
-    // document.getElementById("display_results").innerHTML = results;
-
+    
     console.log("End Of Round " + count);
     console.log("--------------------------");
 
-    //return results to user
-    alert(results);
+//return results to user
+alert(results);
 
-    //Collect all results here
-    document.write(results);
-    document.write("<br> End Of Round " + count + ". <br><br>");
+//Collect all results here
+document.write(results);
+document.write("<br> End Of Round " + count + ". <br><br>");
 }
 
 //Final Count
@@ -101,5 +102,3 @@ if (total_wins > total_looses) {
 }
 // console.log(final_results());
 document.write(final_results());
-
-//Test code words
