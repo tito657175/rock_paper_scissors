@@ -1,8 +1,3 @@
-// Create a container with all console log output
-const container = document.querySelector('#container');
-    console.log('this is the container constant ' + container);
-// const userSelection = 
-
 // strings for shorthand writing later
 let win = "Congrats, U won this round!";
 let loose = "Sorry, you lost this round.";
@@ -16,11 +11,8 @@ let total_invalid = 0;
 
 // game function that returns counted results
 for (count = 1; count < 4; count++) {
-    // creates random number
     let randomNumber = Math.random();
-    console.log(randomNumber);
     
-
     //function that gets computer choice
     function getComputerChoice(computerChoice) {
         if (randomNumber <= .33){
@@ -40,7 +32,7 @@ for (count = 1; count < 4; count++) {
     console.log("computer picks: " + computerChoice);
 
     //collects user input
-    let userSelection = querySelector('button').toLowerCase();
+    let userSelection = document.querySelector('button').toLowerCase();
     console.log("u picked: " + userSelection);
     
     //single variable comparison string
