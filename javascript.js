@@ -8,23 +8,16 @@ let total_ties = 0;
 let total_wins = 0;
 let total_looses = 0;
 let total_invalid = 0;
-const rock = document.getElementById('rock');
-const paper = document.getElementById('paper');
-const scissors = document.getElementById('scissors');
 
-// Respond to corresponding button click
-rock.addEventListener('click',function(userSelection) {
-    userSelection = 'rock';
-    console.log(userSelection);
-});
-paper.addEventListener('click',function(e) {
-    userSelection = 'paper';
-    console.log(userSelection);
-});
-scissors.addEventListener('click',function(e) {
-    userSelection = 'scissors';
-    console.log(userSelection);
-});
+function start(input){
+    document.getElementById("Messages").innerHTML = input;
+    console.log('input inside the function start() is ' + input);
+    reachingOut(input);
+  }
+
+function reachingOut(e){
+    console.log("inside reachingOut function the selection is " + e);
+}
 
 // game function that returns counted results
 function startGame(userSelection){
