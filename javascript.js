@@ -9,9 +9,12 @@ let total_looses = 0;
 let total_invalid = 0;
 
 
+function gameStart(input){
+    document.getElementById("Messages").innerHTML = input;
+    console.log('user input is: ' + input);
+    console.log('computer choice is: ' + getComputerChoice());
+    return combineChoices(getComputerChoice(),input)
 
-function reachingOut(e){
-     return e;
 }
 
 // game function that returns counted results
@@ -31,16 +34,27 @@ function reachingOut(e){
         }
         
         //turns function choice into variable
-        // let computerChoice = getComputerChoice();
+        //let computerChoice = getComputerChoice();
         // shows computer choice
-        // console.log(getComputerChoice());
+        //console.log('this is the computer choice function:' + getComputerChoice());
         
         //single variable comparison string
-        let together = getComputerChoice() + " " + reachingOut();
+        function combineChoices(comp,user){
+            console.log("this is combined choice function: " + comp + ' ' + user);
+            let together = comp + ' ' + user;
+            console.log(together);
+            gameResults(together);
+           // let together = `${getComputerChoice(comp) + ' ' + start(user)}`;
+            // console.log(together);
+        }
+
+        // let together = getComputerChoice() + " " + reachingOut();
         
         //game selector function start
-        function gameResults() {
-        if (reachingOut() == getComputerChoice()){
+        function gameResults(together) {
+        if (together == 'rock rock' 
+            || together == 'paper paper' 
+            || together == 'scissors scissors'){
             total_ties++;
             return tie;
         } else if (together == "rock paper" 
@@ -81,14 +95,6 @@ document.write("Total times you won: " + total_wins + "<br>");
 document.write("Total times you lost: " + total_looses + "<br>");
 document.write("Total times you screwed up the text: " + total_invalid + "<br><br>");
 */
-
-function start(input){
-    // document.getElementById("Messages").innerHTML = input;
-    //console.log('input inside the function start() is ' + input);
-    //reachingOut(input);
-    let results = "The computer picked " + getComputerChoice() + " and you picked " + start() + ". " + gameResults();
-    // console.log(results);
-}
 
 function final_results() {
 if (total_wins > total_looses) {
