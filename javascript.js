@@ -3,7 +3,9 @@ let win = "Congrats, U won this round!";
 let loose = "Sorry, you lost this round.";
 let tie = "Tie, try again.";
 let invalid = "Invalid entry ya fu, try rock, paper or scissors. Game is not case sensitive, don't worry.";
+let playerChoice = '';
 let final_result = '';
+let computerChoice = '';
 let total_ties = 0;
 let total_wins = 0;
 let total_looses = 0;
@@ -11,16 +13,17 @@ let total_invalid = 0;
 
 
 function gameStart(input){
-    document.getElementById("Messages").innerHTML = input;
-    console.log('user input is: ' + input);
+    playerChoice = input;
+    console.log('user input is: ' + playerChoice);
     console.log('computer choice is: ' + getComputerChoice());
-    return combineChoices(getComputerChoice(),input)
+    combineChoices(getComputerChoice(),playerChoice);
+
 }
 
 // game function that returns counted results
     // for (count = 1; count < 4; count++) {
         //function that gets computer choice
-        function getComputerChoice(computerChoice) {
+        function getComputerChoice() {
             let randomNumber = Math.random();
             if (randomNumber <= .33){
                 computerChoice = "rock";
@@ -35,9 +38,7 @@ function gameStart(input){
         
         //single variable comparison string
         function combineChoices(comp,user){
-            console.log("this is combined choice function: " + comp + ' ' + user);
             let together = comp + ' ' + user;
-            console.log(together);
             gameResults(together);
         }
 
@@ -70,15 +71,9 @@ function gameStart(input){
         }
 // }
 
-// display results
-// let results = "The computer picked " + getComputerChoice() + " and you picked " + start() + ". " + gameResults();
-// console.log(results);
 
 //console.log("End Of Round " + count);
 //console.log("--------------------------");
-
-//return results to user
-// alert(results);
 
 //Collect all results here
 /* document.write(results);
@@ -95,15 +90,26 @@ document.write("Total times you screwed up the text: " + total_invalid + "<br><b
 function final_results() {
     if (total_wins > total_looses) {
         final_result = "You did it, you won the game! <br>You won with " + total_wins + " wins " + " to " + total_looses + " losses.";
-        return console.log(final_result);
+        console.log(final_result);
+        // displayStuff();
     } else if (total_looses > total_wins) {
         final_result = "You lost the game, sorry. <br>You lost with " + total_wins + " wins " + " to " + total_looses + " losses.";
-        return console.log(final_result);
+        console.log(final_result);
+        // displayStuff();
     } else if (total_wins == total_looses) {
         final_result = "You tied, there is no winner this time.<br> You tied with " + total_wins + " wins " + " to " + total_looses + " losses.";
-        return console.log(final_result);
+        console.log(final_result);
+        // displayStuff();
     }
 }
+
+/*
+function displayStuff(){
+    document.getElementById("Messages").innerHTML = input;
+    document.getElementById("computerChoice").innerHTML = computerChoice;
+    document.getElementById("score").innerHTML = final_result;
+}
+*/
 
 // console.log(final_results());
 // document.write(final_results());
