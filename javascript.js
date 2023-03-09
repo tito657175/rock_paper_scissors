@@ -3,6 +3,7 @@ let win = "Congrats, U won this round!";
 let loose = "Sorry, you lost this round.";
 let tie = "Tie, try again.";
 let invalid = "Invalid entry ya fu, try rock, paper or scissors. Game is not case sensitive, don't worry.";
+let final_result = '';
 let total_ties = 0;
 let total_wins = 0;
 let total_looses = 0;
@@ -14,7 +15,6 @@ function gameStart(input){
     console.log('user input is: ' + input);
     console.log('computer choice is: ' + getComputerChoice());
     return combineChoices(getComputerChoice(),input)
-
 }
 
 // game function that returns counted results
@@ -33,19 +33,12 @@ function gameStart(input){
             }
         }
         
-        //turns function choice into variable
-        //let computerChoice = getComputerChoice();
-        // shows computer choice
-        //console.log('this is the computer choice function:' + getComputerChoice());
-        
         //single variable comparison string
         function combineChoices(comp,user){
             console.log("this is combined choice function: " + comp + ' ' + user);
             let together = comp + ' ' + user;
             console.log(together);
             gameResults(together);
-           // let together = `${getComputerChoice(comp) + ' ' + start(user)}`;
-            // console.log(together);
         }
 
         // let together = getComputerChoice() + " " + reachingOut();
@@ -56,20 +49,23 @@ function gameStart(input){
             || together == 'paper paper' 
             || together == 'scissors scissors'){
             total_ties++;
-            return tie;
+            console.log(tie);
+            final_results();
         } else if (together == "rock paper" 
             || together == "paper scissors" 
             || together == "scissors rock"){
             total_wins++;
-            return win;
+            console.log(win);
+            final_results();
         } else if (together == "rock scissors" 
             || together == "paper rock" 
             || together == "scissors paper"){
             total_looses++;
-            return loose;
+            console.log(loose);
+            final_results();
         } else {
             total_invalid++;
-            return invalid;
+            final_results();
         }
         }
 // }
@@ -97,13 +93,17 @@ document.write("Total times you screwed up the text: " + total_invalid + "<br><b
 */
 
 function final_results() {
-if (total_wins > total_looses) {
-    return final_result = "You did it, you won the game! <br>You won with " + total_wins + " wins " + " to " + total_looses + " losses.";
-} else if (total_looses > total_wins) {
-    return final_result = "You lost the game, sorry. <br>You lost with " + total_wins + " wins " + " to " + total_looses + " losses.";
-} else if (total_wins == total_looses) {
-    return final_result = "You tied, there is no winner this time.<br> You tied with " + total_wins + " wins " + " to " + total_looses + " losses.";
+    if (total_wins > total_looses) {
+        final_result = "You did it, you won the game! <br>You won with " + total_wins + " wins " + " to " + total_looses + " losses.";
+        return console.log(final_result);
+    } else if (total_looses > total_wins) {
+        final_result = "You lost the game, sorry. <br>You lost with " + total_wins + " wins " + " to " + total_looses + " losses.";
+        return console.log(final_result);
+    } else if (total_wins == total_looses) {
+        final_result = "You tied, there is no winner this time.<br> You tied with " + total_wins + " wins " + " to " + total_looses + " losses.";
+        return console.log(final_result);
+    }
 }
-}
+
 // console.log(final_results());
 // document.write(final_results());
