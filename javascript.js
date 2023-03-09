@@ -1,8 +1,9 @@
 // All strings for shorthand writing later and to hold counts
-let win = "Congrats, U won this round!";
-let loose = "Sorry, you lost this round.";
-let tie = "Tie, try again.";
+const win = "Congrats, you won this round!";
+const loose = "Sorry, you lost this round.";
+const tie = "Tie, try again.";
 let invalid = "Invalid entry ya fu, try rock, paper or scissors. Game is not case sensitive, don't worry.";
+let currentRound = ''
 let playerChoice = '';
 let final_result = '';
 let computerChoice = '';
@@ -47,18 +48,19 @@ function gameStart(input){
         if (together == 'rock rock' 
             || together == 'paper paper' 
             || together == 'scissors scissors'){
+            currentRound = tie;
             total_ties++;
-            console.log(tie);
             final_results();
         } else if (together == "rock paper" 
             || together == "paper scissors" 
             || together == "scissors rock"){
+            currentRound = win;
             total_wins++;
-            console.log(win);
             final_results();
         } else if (together == "rock scissors" 
             || together == "paper rock" 
             || together == "scissors paper"){
+            currentRound = loose;
             total_looses++;
             console.log(loose);
             final_results();
@@ -89,9 +91,9 @@ function final_results() {
 }
 
 function displayStuff(){
-    document.getElementById("playerChoice").innerHTML = 'You Chose ' + playerChoice.charAt(0).toUpperCase()
-    + playerChoice.slice(1);
+    document.getElementById("playerChoice").innerHTML = 'You Chose ' + capitalizeWord(playerChoice);
     document.getElementById("computerChoice").innerHTML = 'The Computer Picked ' + capitalizeWord(computerChoice);
+    document.getElementById("currentRound").innerHTML = 'Results of this round are: ' + currentRound;
     document.getElementById("score").innerHTML = final_result;
 }
 
@@ -99,5 +101,3 @@ function capitalizeWord (word){
     let newWord = word.charAt(0).toUpperCase()+ word.slice(1);
     return newWord;
 }
-// console.log(final_results());
-// document.write(final_results());
