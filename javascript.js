@@ -74,17 +74,17 @@ function gameStart(input){
 function final_results() {
     if (total_wins > total_looses) {
         final_result = "You did it, you are winning the game overall! You are winning with " 
-        + total_wins + " wins" + " to " + total_looses + " losses and " + total_ties + " total ties.";
+        + total_wins + " wins" + " to " + total_looses + " losses and " + total_ties + " total times tied.";
         console.log(final_result);
         displayStuff();
     } else if (total_looses > total_wins) {
         final_result = "You are losing the game so far. You are loosing with " 
-        + total_wins + " wins" + " to " + total_looses + " losses and " + total_ties + " total ties.";
+        + total_wins + " wins" + " to " + total_looses + " losses and " + total_ties + " total times tied.";
         console.log(final_result);
         displayStuff();
     } else if (total_wins == total_looses) {
         final_result = "You are tied, there is no winner right now. You are tied with " 
-        + total_wins + " wins" + " to " + total_looses + " losses and " + total_ties + " total ties.";
+        + total_wins + " wins" + " to " + total_looses + " losses and " + total_ties + " total times tied.";
         console.log(final_result);
         displayStuff();
     }
