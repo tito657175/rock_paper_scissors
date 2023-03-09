@@ -1,4 +1,4 @@
-// strings for shorthand writing later
+// All strings for shorthand writing later and to hold counts
 let win = "Congrats, U won this round!";
 let loose = "Sorry, you lost this round.";
 let tie = "Tie, try again.";
@@ -41,8 +41,6 @@ function gameStart(input){
             let together = comp + ' ' + user;
             gameResults(together);
         }
-
-        // let together = getComputerChoice() + " " + reachingOut();
         
         //game selector function start
         function gameResults(together) {
@@ -71,45 +69,35 @@ function gameStart(input){
         }
 // }
 
-
-//console.log("End Of Round " + count);
-//console.log("--------------------------");
-
-//Collect all results here
-/* document.write(results);
-document.write("<br> End Of Round " + count + ". <br><br>");
-*/
-
-/* Final Count
-document.write("Total times you tied: " + total_ties + "<br>");
-document.write("Total times you won: " + total_wins + "<br>");
-document.write("Total times you lost: " + total_looses + "<br>");
-document.write("Total times you screwed up the text: " + total_invalid + "<br><br>");
-*/
-
 function final_results() {
     if (total_wins > total_looses) {
-        final_result = "You did it, you won the game! <br>You won with " + total_wins + " wins " + " to " + total_looses + " losses.";
+        final_result = "You did it, you are winning the game overall! You are winning with " 
+        + total_wins + " wins" + " to " + total_looses + " losses and " + total_ties + " total ties.";
         console.log(final_result);
-        // displayStuff();
+        displayStuff();
     } else if (total_looses > total_wins) {
-        final_result = "You lost the game, sorry. <br>You lost with " + total_wins + " wins " + " to " + total_looses + " losses.";
+        final_result = "You are losing the game so far. You are loosing with " 
+        + total_wins + " wins" + " to " + total_looses + " losses and " + total_ties + " total ties.";
         console.log(final_result);
-        // displayStuff();
+        displayStuff();
     } else if (total_wins == total_looses) {
-        final_result = "You tied, there is no winner this time.<br> You tied with " + total_wins + " wins " + " to " + total_looses + " losses.";
+        final_result = "You are tied, there is no winner right now. You are tied with " 
+        + total_wins + " wins" + " to " + total_looses + " losses and " + total_ties + " total ties.";
         console.log(final_result);
-        // displayStuff();
+        displayStuff();
     }
 }
 
-/*
 function displayStuff(){
-    document.getElementById("Messages").innerHTML = input;
-    document.getElementById("computerChoice").innerHTML = computerChoice;
+    document.getElementById("playerChoice").innerHTML = 'You Chose ' + playerChoice.charAt(0).toUpperCase()
+    + playerChoice.slice(1);
+    document.getElementById("computerChoice").innerHTML = 'The Computer Picked ' + capitalizeWord(computerChoice);
     document.getElementById("score").innerHTML = final_result;
 }
-*/
 
+function capitalizeWord (word){
+    let newWord = word.charAt(0).toUpperCase()+ word.slice(1);
+    return newWord;
+}
 // console.log(final_results());
 // document.write(final_results());
